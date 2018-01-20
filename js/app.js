@@ -42,3 +42,11 @@ function authentication(provider) {
     // ...
   });
 }
+
+var title = $('#title');
+
+var dataBase = firebase.database().ref().child('titulo');
+
+dataBase.on('value',function (snapshot) {
+  $title.text(snapshot.val());
+});
